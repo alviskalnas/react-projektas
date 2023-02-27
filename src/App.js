@@ -1,16 +1,47 @@
-import React from 'react';
-import MainHeader from './main-page/MainHeader';
-import MainPage from './main-page/MainPage'
-export default function App() {
+
+import { Route, Routes, Link } from 'react-router-dom';
+import Header from './components/Header/Header.js';
+import MainPage from './components/MainPage/MainPage.js';
+import ProgramsPage from './components/ProgramsPage/ProgramsPage.js';
+import NewsPage from './components/NewsPage/NewsPage.js';
+import Footer from './components/Footer/Footer.js'
+import './components/NewsPage/newpage.css'
+
+function App() {
   return (
     <div className="App">
-      <MainHeader/>
-      <MainPage/>
-
-      <h1>Hello, world!</h1>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/news' element={<NewsPage />} />
+        <Route path='/programs' element={<ProgramsPage />} />
+        <Route path='*' element={
+          <div>
+            <h1>404 error. Page not found</h1>
+            <Link to='/'>Back to Home page</Link>
+          </div>
+        } />
+      </Routes>
+      <Footer/>
     </div>
   );
 }
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
