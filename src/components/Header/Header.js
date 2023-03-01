@@ -19,7 +19,7 @@ function Header() {
             <div className="container">
                 <div className="header-wrapper">
                     <div className="image-wrapper">
-                        <Link to="/">
+                        <Link to="/main-page">
                             <img src="https://codeacademy.lt/wp-content/themes/codeacademy/dist/images/codeacademy-white.svg" alt="CodeAcademy logo" className={`logo white ${isScrolled ? 'hidden' : ''}`} />
                             <img src="https://codeacademy.lt/wp-content/themes/codeacademy/dist/images/codeacademy-black.svg" alt="CodeAcademy logo" className={`logo black ${isScrolled ? '' : 'hidden'}`} />
                         </Link>

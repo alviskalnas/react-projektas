@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 function MainPage() {
@@ -65,8 +65,10 @@ function MainPage() {
             </div>
         </section>
     </main>
+    <Link to="/" style={{ color: '#000' }}>Main</Link>
     <Footer />
     </>
+   
   )
 }
 
