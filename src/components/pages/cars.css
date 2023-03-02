@@ -11,7 +11,9 @@ form {
     font-size: 0.8rem;
   }
   
-.error {
+  .input-error,
+  .error {
     border-color: red;
   }
+  
   
