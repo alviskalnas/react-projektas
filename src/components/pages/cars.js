@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-
+import {Link} from 'react-router-dom';
 import './cars.css';
 
 const Cars = () => {
+
+
     const [brand, setBrand] = useState('');
     const [model, setModel] = useState('');
     const [engine, setEngine] = useState('electric');
@@ -30,37 +32,21 @@ const Cars = () => {
         { value: 'special blue', label: 'Special Blue' },
         { value: 'other', label: 'Other' },];
 
-    const handleBrandChange = (event) => {
-        setBrand(event.target.value);
-    };
+    const handleBrandChange = (event) => {setBrand(event.target.value);};
 
-    const handleModelChange = (event) => {
-        setModel(event.target.value);
-    };
+    const handleModelChange = (event) => {setModel(event.target.value);};
 
-    const handleEngineChange = (event) => {
-        setEngine(event.target.value);
-    };
+    const handleEngineChange = (event) => {setEngine(event.target.value);};
 
-    const handlePriceChange = (event) => {
-        setPrice(event.target.value);
-    };
+    const handlePriceChange = (event) => {setPrice(event.target.value);};
 
-    const handleMileageChange = (event) => {
-        setMileage(event.target.value);
-    };
+    const handleMileageChange = (event) => {setMileage(event.target.value);};
 
-    const handleColorChange = (event) => {
-        setColor(event.target.value);
-    };
+    const handleColorChange = (event) => {setColor(event.target.value);};
 
-    const handleOtherColorChange = (event) => {
-        setOtherColor(event.target.value);
-    };
+    const handleOtherColorChange = (event) => {setOtherColor(event.target.value);};
 
-    const handleCarImageChange = (event) => {
-        setCarImage(event.target.files[0]);
-    };
+    const handleCarImageChange = (event) => {setCarImage(event.target.files[0]);};
 
     const handleDiscountChange = (event) => {
         setDiscountInput(event.target.value);
@@ -154,12 +140,6 @@ const Cars = () => {
         setFormErrors({});
     };
 
-
-
-
-
-
-
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -232,7 +212,7 @@ const Cars = () => {
 
                 <label htmlFor="carImage">Car Image:</label>
                 <input
-                    type="text"
+                    type="url"
                     id="carImage"
                     placeholder='Enter an image url'
                     value={carImage || ''}
@@ -252,6 +232,7 @@ const Cars = () => {
                 {formErrors.discount && <div className="error-message">{formErrors.discount}</div>}
 
                 <button className="form-button" type="submit">Submit</button>
+                <Link to="/">Main</Link>
 
 
             </form>
