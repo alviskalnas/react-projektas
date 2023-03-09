@@ -142,7 +142,7 @@ const Cars = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className="cars-form" onSubmit={handleSubmit}>
                 <label htmlFor="brand">Brand:</label>
                 <input
                     type="text"

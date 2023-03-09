@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import './main-page.css'
 function MainPage() {
     return (
         <>

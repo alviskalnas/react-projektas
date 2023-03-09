@@ -1,0 +1,128 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 2;
+}
+
+.main-header.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0 7px 15px 0 rgb(0 0 0 / 7%);
+}
+
+
+.main-header .container {
+       max-width: 1230px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    margin: 0 auto;
+    width: 100%;
+}
+.main-header .header-wrapper {
+  height: 83px;
+  display: flex;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 137px;
+  height: 42px;
+  object-fit: cover;
+}
+
+.main-header .image-wrapper {
+  position: relative;
+}
+
+.main-header .image-wrapper img.white {
+  display: block;
+}
+
+.main-header .image-wrapper img.black {
+  display: none;
+}
+
+.main-header.scrolled .image-wrapper img.white {
+  display: none;
+}
+
+.main-header.scrolled .image-wrapper img.black {
+  display: block;
+  color: #000;
+}
+
+
+nav.main-navigation {
+    margin-left: auto;
+}
+nav .main-navigation .main-menu {
+      margin-right: -15px;
+    height: 83px;
+    max-height: 83px;
+    overflow: hidden;
+}
+li.menu-item {
+    display: inline-block;
+    font-weight: 700;
+}
+.main-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 30px 14px;
+}
+
+.main-header.scrolled .main-menu li a {
+  color: #000;
+}
+
+.main-header .header-additional {
+  align-self: center;
+  margin-left: 24px;
+}
+.main-header .main-navigation .button {
+  padding-left: 20px;
+    padding-right: 20px;
+    min-width: 145px;
+    color: #fff;
+}
+.button {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  min-width: 170px;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 13px 30px 11px;
+  box-sizing: border-box;
+  background: #1200ff;
+  outline: 0;
+  line-height: 1.4;
+  border: 1px solid #1200ff;
+  font-weight: 700;
+  cursor: pointer;
+}
+a.button-title {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    padding: 30px 40px;
+    border-radius: 8px;
+  }
