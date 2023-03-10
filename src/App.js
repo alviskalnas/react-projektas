@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes,  Route, Link } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import MainPage from './components/MainPage/MainPage.js';
 import ProgramsPage from './components/ProgramsPage/ProgramsPage.js';
 import NewsPage from './components/NewsPage/NewsPage.js';
@@ -9,47 +10,16 @@ import ToDoList from './components/pages/todo/to-do-list.js';
 import StudentPage from './components/Student/student-page.js';
 import Cat from './components/APIpage/API-page.js';
 import Bored from './components/APIpage/bored.js';
+import Coinbase from './components/APIpage/coinbase.js';
+import Navigation from './components/Navigation/navigation.js';
+import FakeAccount from './components/APIpage/fake-acc.js'
+import NewApi from './components/APIpage/new-API.js';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <ul>
-          <li>
-            <Link to='/MainPage'>CodeAcademy Project</Link>
-          </li>
-          <li>
-            <Link to='/'>Menu</Link>
-          </li>
-          <li>
-            <Link to="/news">News</Link>
-          </li>
-          <li>
-            <Link to="/programs">Programs</Link>
-          </li>
-          <li>
-            <Link to='/pages'>Counter</Link>
-          </li>
-          <li>
-            <Link to="/cars">Cars</Link>
-          </li>
-          <li>
-              <Link to="/shopping-page">Shopping Page</Link>
-          </li>
-          <li>
-            <Link to="/to-do-list">To Do List</Link>
-          </li>
-          <li>
-            <Link to="/student-page">Student Page</Link>
-          </li>
-          <li>
-            <Link to="/API-page">Cat page</Link>
-          </li>
-          <li>
-            <Link to="/bored">Bored page</Link>
-          </li>
-        </ul>
-        <Routes>
+      <Navigation/>
+      <Routes>
         <Route path='/MainPage' element={<MainPage />} />
         <Route path='/news' element={<NewsPage />} />
         <Route path='/programs' element={<ProgramsPage />} />
@@ -61,17 +31,20 @@ function App() {
         <Route path="/student-page" element={<StudentPage />} />
         <Route path="/API-page" element={<Cat />} />
         <Route path="/bored" element={<Bored />} />
+        <Route path="/coinbase" element={<Coinbase />} />
+        <Route path="/fake-acc" element={<FakeAccount />} />
+        <Route path="new-API" element={<NewApi />} />
         <Route path='*' element={
           <div>
             <h1>404 error. Page not found</h1>
             <Link to='/'>Back to Home page</Link>
           </div>
         } />
-        </Routes>
-      </Router>
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
 

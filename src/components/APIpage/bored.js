@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import Container from '../pages/container/Container';
 
 function Bored() {
   const [activity, setActivity] = useState({});
@@ -7,10 +8,7 @@ function Bored() {
   const [type, setType] = useState('');
   const [showActivity, setShowActivity] = useState(false);
 
-  const getActivityByType = (event) => {
-    if (event) {
-      event.preventDefault();
-    }
+  const getActivityByType = useCallback(() => {
     setIsLoading(true);
     fetch(`https://www.boredapi.com/api/activity?type=${type}`)
       .then((response) => response.json())
@@ -24,17 +22,27 @@ function Bored() {
         setError(error.message);
         setIsLoading(false);
       });
-  };
+  }, [type]);
 
   const handleSelectChange = (event) => {
     setType(event.target.value);
   };
 
+  useEffect(() => {
+    if (type !== '') {
+      getActivityByType();
+    }
+  }, [type, getActivityByType]);
+
   return (
+    <Container>
     <div>
       <h1>Bored API</h1>
       <div>
-        <form onSubmit={getActivityByType}>
+        <form onSubmit={(event) => {
+          event.preventDefault();
+          getActivityByType();
+        }}>
           <label htmlFor="activity-type">Activity type:</label>
           <select name="activity-type" id="activity-type" onChange={handleSelectChange}>
             <option value="education">Education</option>
@@ -63,10 +71,14 @@ function Bored() {
         {error && <p>Error: {error}</p>}
       </div>
     </div>
+    </Container>
   );
 }
 
 export default Bored;
+
+
+
 
 
 

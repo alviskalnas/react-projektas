@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Container from '../pages/container/Container';
 import './API-page.css';
 
 function Cat() {
@@ -59,6 +60,7 @@ function Cat() {
   };
 
   return (
+    <Container>
     <div>
       <h1>Cat API</h1>
       <div>
@@ -80,6 +82,7 @@ function Cat() {
         {error && isOnline && <p>Error: {error}</p>}
       </div>
     </div>
+    </Container>
   );
 }
 
